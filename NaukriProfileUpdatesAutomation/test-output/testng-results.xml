@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-02-23T22:56:55 IST" name="Suite" finished-at="2025-02-23T22:57:17 IST" duration-ms="21688">
+    <groups>
+    </groups>
+    <test started-at="2025-02-23T22:56:55 IST" name="Test" finished-at="2025-02-23T22:57:17 IST" duration-ms="21688">
+      <class name="test.LoginTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:test.LoginTest@5adb0db3]" started-at="2025-02-23T22:56:55 IST" name="setup" finished-at="2025-02-23T22:56:58 IST" duration-ms="3375" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testLogin()[pri:0, instance:test.LoginTest@5adb0db3]" started-at="2025-02-23T22:56:58 IST" name="testLogin" finished-at="2025-02-23T22:57:02 IST" duration-ms="3827" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+      </class> <!-- test.LoginTest -->
+      <class name="test.ProfileUpdationTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:test.ProfileUpdationTest@5dcd8c7a]" started-at="2025-02-23T22:57:03 IST" name="setup" finished-at="2025-02-23T22:57:05 IST" duration-ms="2862" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="profileUpdate()[pri:0, instance:test.ProfileUpdationTest@5dcd8c7a]" started-at="2025-02-23T22:57:05 IST" name="profileUpdate" finished-at="2025-02-23T22:57:17 IST" duration-ms="11166" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- profileUpdate -->
+      </class> <!-- test.ProfileUpdationTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
