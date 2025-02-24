@@ -45,7 +45,7 @@ public class BaseClass {
         return file.getAbsolutePath();
     }
 
-   // @AfterClass
+    @AfterClass
     public void teardown() {
         if (driver != null) {
             driver.quit();
