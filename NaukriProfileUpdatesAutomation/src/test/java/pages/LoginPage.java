@@ -39,7 +39,7 @@ public class LoginPage {
 
     // Method to perform login
     public void naukriLoginPortal() throws InterruptedException {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("usernameField")));
 
         usernameField.clear();
@@ -54,8 +54,7 @@ WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLoca
         sa.assertEquals("https://www.naukri.com/mnjuser/homepage", driver.getCurrentUrl());
         sa.assertAll();
         
-       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		WebElement moreOptions = wait.until(ExpectedConditions.elementToBeClickable(threeDots)); 
+	    WebElement moreOptions = wait.until(ExpectedConditions.elementToBeClickable(threeDots)); 
 		moreOptions.click();
 WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='View & Update Profile']")));
 element.click();
