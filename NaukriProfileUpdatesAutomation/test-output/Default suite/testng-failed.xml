@@ -6,8 +6,8 @@
       <class name="test.ProfileUpdationTest">
         <methods>
           <include name="teardown"/>
+          <include name="resumeHeadlineTest"/>
           <include name="setup"/>
-          <include name="profileUpdate"/>
         </methods>
       </class> <!-- test.ProfileUpdationTest -->
     </classes>

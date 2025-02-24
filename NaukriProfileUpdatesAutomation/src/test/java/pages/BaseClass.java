@@ -3,7 +3,6 @@ package pages;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -20,14 +19,13 @@ import utils.ConfigReader;
 public class BaseClass {
 
     public WebDriver driver;
-    public Properties prop;
 
     @BeforeClass
     public void setup() throws IOException {	   
     	ChromeOptions options = new ChromeOptions();
     	options.addArguments("--start-maximized");
     	options.addArguments("--incognito");
-        options.addArguments("--headless=new");  // Use new headless mode
+       // options.addArguments("--headless=new");  // Use new headless mode
         options.addArguments("--no-sandbox"); 
         options.addArguments("--disable-dev-shm-usage"); 
     	options.addArguments("--disable-popup-blocking"); // ✅ This prevents pop-ups from being blocked.
