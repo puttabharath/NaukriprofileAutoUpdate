@@ -42,7 +42,8 @@ public class ProfileUpdation {
 		 wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		WebElement moreOptions = wait.until(ExpectedConditions.elementToBeClickable(threeDots)); 
 		moreOptions.click();
-		viewUpdateProfile.click();
+WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='View & Update Profile']")));
+element.click();
 		deleteIcon.click(); 
         deletePopupBtn.click();
         WebElement updateResume = wait.until(ExpectedConditions.elementToBeClickable(updateResumeBtn));
