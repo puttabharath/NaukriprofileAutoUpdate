@@ -22,7 +22,7 @@ public class LoginPage {
   String username=  ConfigReader.getProperty("username");
 	String password= ConfigReader.getProperty("password");
     
-    @FindBy(xpath = "//input[@id='usernameField']")   // Update with actual ID or locator
+    @FindBy(id = "usernameField")   // Update with actual ID or locator
     WebElement usernameField;
 
     @FindBy(xpath = "//input[@id='passwordField']")   // Update with actual ID or locator
@@ -40,7 +40,7 @@ public class LoginPage {
     // Method to perform login
     public void naukriLoginPortal() throws InterruptedException {
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='usernameField']")));
+WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("usernameField")));
 
         usernameField.clear();
         usernameField.sendKeys(username);
