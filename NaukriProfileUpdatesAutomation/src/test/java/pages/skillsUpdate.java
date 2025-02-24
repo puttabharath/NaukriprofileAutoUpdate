@@ -41,7 +41,7 @@ public class skillsUpdate {
     	
     	JavascriptExecutor jse = (JavascriptExecutor) driver;
     	
-    	jse.executeScript("window.scrollBy(520,400) "); //scroll till the key skills
+    	jse.executeScript("window.scrollBy(520,640)"); //scroll till the key skills
     	
     	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     	wait.until(ExpectedConditions.elementToBeClickable(editIconKeySkills)).click();
