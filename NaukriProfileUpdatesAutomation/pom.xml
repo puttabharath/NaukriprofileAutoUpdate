@@ -162,22 +162,7 @@
                     <suiteXmlFile>testng.xml</suiteXmlFile>
                 </suiteXmlFiles>
             </configuration>
-        </plugin>
-
-	   <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-compiler-plugin</artifactId>
-    <version>3.10.1</version>
-    <configuration>
-        <release>17</release> <!-- Change to match Java version -->
-        <compilerArgs>
-            --add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED
-        </compilerArgs>
-    </configuration>
-</plugin>
-
-
-	    
+        </plugin>  
     </plugins>
 </build>
 
