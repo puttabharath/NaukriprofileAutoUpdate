@@ -29,7 +29,7 @@ public class BaseClass {
         options.addArguments("--no-sandbox"); 
         options.addArguments("--disable-dev-shm-usage"); 
     	options.addArguments("--disable-popup-blocking"); // ✅ This prevents pop-ups from being blocked.
-    	WebDriverManager.chromedriver().setup();
+WebDriverManager.chromedriver().driverVersion("133.0.6943.127").setup();
     	driver = new ChromeDriver(options);
 
         driver.manage().window().maximize();
