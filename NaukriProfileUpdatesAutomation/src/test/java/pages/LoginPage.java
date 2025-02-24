@@ -39,6 +39,9 @@ public class LoginPage {
 
     // Method to perform login
     public void naukriLoginPortal() throws InterruptedException {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='usernameField']")));
+
         usernameField.clear();
         usernameField.sendKeys(username);
 
