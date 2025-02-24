@@ -31,7 +31,7 @@ public class ExtentReporterNG {
         reporter.config().setDocumentTitle("Naukri Test Results");
         reporter.config().setTheme(Theme.DARK);
         reporter.config().setEncoding("UTF-8");
-        reporter.config().enableOfflineMode(true); // Ensures CSS & JS are included
+        reporter.config().enableOfflineMode(true);
 
         ExtentReports extent = new ExtentReports();
         extent.attachReporter(reporter);
@@ -40,13 +40,13 @@ public class ExtentReporterNG {
         extent.setSystemInfo("Environment", "Automation Script - QA");
         extent.setSystemInfo("User Name", "PBK");
 
-        // Create a symlink to the latest report for Jenkins
+        // Copy latest report to 'latest.html' for Jenkins visibility
         try {
             Path latestReportPath = Paths.get(reportDir + "latest.html");
-            Files.deleteIfExists(latestReportPath); // Delete existing symlink
-            Files.createSymbolicLink(latestReportPath, Paths.get(reportPath));
-        } catch (IOException | UnsupportedOperationException e) {
-            System.out.println("Could not create latest.html symlink: " + e.getMessage());
+            Files.deleteIfExists(latestReportPath);
+            Files.copy(Paths.get(reportPath), latestReportPath, StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException e) {
+            System.out.println("Could not create latest.html file: " + e.getMessage());
         }
 
         return extent;
