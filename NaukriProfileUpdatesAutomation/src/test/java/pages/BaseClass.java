@@ -25,8 +25,11 @@ public class BaseClass {
     	ChromeOptions options = new ChromeOptions();
     	options.addArguments("--start-maximized");
     	options.addArguments("--incognito");
-        options.addArguments("--headless=new");  // Use new headless mode
-        options.addArguments("--no-sandbox"); 
+        options.addArguments("--headless");  // Run in headless mode
+options.addArguments("--disable-gpu");
+options.addArguments("--window-size=1920,1080");
+options.addArguments("--no-sandbox");
+options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-dev-shm-usage"); 
     	options.addArguments("--disable-popup-blocking"); // ✅ This prevents pop-ups from being blocked.
     	WebDriverManager.chromedriver().setup();
