@@ -42,10 +42,10 @@ public class LoginPage {
 
 
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("usernameField")));
+WebElement username1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("usernameField")));
 	    
-        username.clear();
-        username.sendKeys(username);
+        username1.clear();
+        username1.sendKeys(username);
 
         passwordField.sendKeys(password);
         loginButton.click();
