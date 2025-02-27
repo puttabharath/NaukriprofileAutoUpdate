@@ -22,8 +22,9 @@ public class BaseClass {
     @BeforeClass
     public void setup() throws IOException {    
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless=new"); // Headless mode
+        options.addArguments("--headless=new"); // Headless mode
         options.addArguments("--window-size=1920,1080"); // Set viewport size
+        options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
         options.addArguments("--disable-gpu"); 
         options.addArguments("--no-sandbox"); 
         options.addArguments("--disable-dev-shm-usage"); 
