@@ -40,10 +40,10 @@ public class LoginPage {
     // Method to perform login
     public void naukriLoginPortal() throws InterruptedException {
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("usernameField")));
+WebElement usernameField1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("usernameField")));
 
-        usernameField.clear();
-        usernameField.sendKeys(username);
+        usernameField1.clear();
+        usernameField1.sendKeys(username);
 
         passwordField.sendKeys(password);
         loginButton.click();
