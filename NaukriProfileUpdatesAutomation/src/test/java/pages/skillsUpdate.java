@@ -1,5 +1,8 @@
 package pages;
 
+import java.time.Duration;
+import java.util.List;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
@@ -8,8 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
-import java.util.List;
+import org.testng.annotations.Test;
 
 public class skillsUpdate {
     WebDriver driver;
@@ -36,12 +38,6 @@ public class skillsUpdate {
     
     
     public void addDeleteSkills() throws InterruptedException {
-    	Point loc = keySkillsElement.getLocation();
-    	System.out.println(loc);
-    	
-    	JavascriptExecutor jse = (JavascriptExecutor) driver;
-    	
-    	jse.executeScript("window.scrollBy(520,400) "); //scroll till the key skills
     	
     	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     	wait.until(ExpectedConditions.elementToBeClickable(editIconKeySkills)).click();
