@@ -17,25 +17,25 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import utils.ConfigReader;
 
 public class BaseClass {
-
     public WebDriver driver;
 
     @BeforeClass
-    public void setup() throws IOException {	   
-    	ChromeOptions options = new ChromeOptions();
-    	options.addArguments("--start-maximized");
-    	options.addArguments("--incognito");
-       options.addArguments("--headless=new");  // Use new headless mode
+    public void setup() throws IOException {    
+        ChromeOptions options = new ChromeOptions();
+        //options.addArguments("--headless=new"); // Headless mode
+        options.addArguments("--window-size=1920,1080"); // Set viewport size
+        options.addArguments("--disable-gpu"); 
         options.addArguments("--no-sandbox"); 
         options.addArguments("--disable-dev-shm-usage"); 
-    	options.addArguments("--disable-popup-blocking"); // ✅ This prevents pop-ups from being blocked.
-WebDriverManager.chromedriver().driverVersion("133.0.6943.127").setup();
-    	driver = new ChromeDriver(options);
+        options.addArguments("--disable-popup-blocking"); // Prevent pop-ups blocking
+        options.addArguments("--start-maximized");
+        options.addArguments("--incognito");
 
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
+
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.get(ConfigReader.getProperty("url"));
-       
     }
 
     public String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
@@ -46,7 +46,7 @@ WebDriverManager.chromedriver().driverVersion("133.0.6943.127").setup();
         return file.getAbsolutePath();
     }
 
-    @AfterClass
+  @AfterClass
     public void teardown() {
         if (driver != null) {
             driver.quit();

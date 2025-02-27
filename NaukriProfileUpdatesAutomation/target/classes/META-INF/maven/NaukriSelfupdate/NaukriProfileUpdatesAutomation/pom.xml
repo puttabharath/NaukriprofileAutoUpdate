@@ -107,12 +107,6 @@
 			<artifactId>monte-screen-recorder</artifactId>
 			<version>0.7.7.0</version>
 		</dependency>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.11.0</version> <!-- Use the latest version available -->
-		</dependency>
-
 		<!--
 		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 		<dependency>
@@ -128,15 +122,6 @@
 			<artifactId>log4j-core</artifactId>
 			<version>2.24.3</version>
 		</dependency>
-
-		<!--
-		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
-		<dependency>
-			<groupId>io.github.bonigarcia</groupId>
-			<artifactId>webdrivermanager</artifactId>
-			<version>5.9.2</version>
-		</dependency>
-		
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-simple</artifactId>
@@ -154,16 +139,16 @@
   </dependencies>
 <build>
     <plugins>
-        <!-- Maven Compiler Plugin (Ensures Java compatibility) -->
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.8.1</version>
-            <configuration>
-                <source>11</source>  <!-- Ensure your Java version -->
-                <target>11</target>
-            </configuration>
-        </plugin>
+       <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>3.11.0</version>  <!-- Ensure latest version -->
+    <configuration>
+        <source>21</source>
+        <target>21</target>
+    </configuration>
+</plugin>
+
 
         <!-- Maven Surefire Plugin (Runs TestNG tests) -->
         <plugin>
@@ -176,21 +161,17 @@
                 </suiteXmlFiles>
             </configuration>
         </plugin>
-
-	   <plugin>
+	    <plugin>
     <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-compiler-plugin</artifactId>
-    <version>3.10.1</version>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.0.0-M7</version>
     <configuration>
-        <release>17</release> <!-- Change to match Java version -->
-        <compilerArgs>
-            --add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED
-        </compilerArgs>
+        <systemPropertyVariables>
+            <extent.reporter.spark.start>true</extent.reporter.spark.start>
+        </systemPropertyVariables>
     </configuration>
 </plugin>
 
-
-	    
     </plugins>
 </build>
 

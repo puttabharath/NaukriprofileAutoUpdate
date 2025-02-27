@@ -32,7 +32,7 @@ public class ProfileUpdation {
 	@FindBy(xpath = "//i[@data-title='delete-resume']")
 	private WebElement deleteIcon;
 	
-	@FindBy(xpath = "(//button[text()='Delete'])[2]")
+	@FindBy(xpath = "//div[@class='lightbox model_open flipOpen']//button[@class='btn-dark-ot'][normalize-space()='Delete']")
 	private WebElement deletePopupBtn;
 	
 	@FindBy(xpath = "//span[text()='Upload resume']")
@@ -52,7 +52,7 @@ element.click();
 
         
         // Copy file path to clipboard
-        StringSelection filePath = new StringSelection("C:\\Users\\bharath\\OneDrive\\Pictures\\Bharath Resumes\\TCS 2.5 years\\Bharath Kumar Putta Resume.pdf");
+        StringSelection filePath = new StringSelection("C:\\Users\\bharath\\git\\NaukriProfileAutoUpdate\\NaukriProfileUpdatesAutomation\\src\\test\\java\\testData\\Resume\\Bharath Kumar Putta Resume.pdf");
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filePath, null);
         
         // Use Robot class to paste and press Enter
