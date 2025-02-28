@@ -18,7 +18,7 @@ public class ExtentReporterNG {
         }
 
         // Get project directory dynamically
-        String reportDir = System.getProperty("C:\Users\bharath\git\NaukriProfileAutoUpdate\NaukriProfileUpdatesAutomation\reports\";
+  String reportDir = "C:\\Users\\bharath\\git\\NaukriProfileAutoUpdate\\NaukriProfileUpdatesAutomation\\reports\\";
         File dir = new File(reportDir);
 
         // Ensure reports directory exists
